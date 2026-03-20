@@ -10,7 +10,7 @@ function filterPortfolio(cat, btn) {
     }
   });
 }
-// Show static by default
+// Show static by defaults
 document.addEventListener('DOMContentLoaded', () =>
   filterPortfolio('static', document.querySelector('.filter-btn.active')),
 );

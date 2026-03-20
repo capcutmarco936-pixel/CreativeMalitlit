@@ -566,7 +566,7 @@ nav {
   color: rgba(240, 237, 232, 0.5);
 }
 
-/* TEAM */
+/* TEAMS */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
