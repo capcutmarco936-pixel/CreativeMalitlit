@@ -242,12 +242,15 @@ nav {
   overflow: hidden;
   background: var(--accent);
   padding: 0.9rem 0;
+  display: flex;
+  align-items: center;
 }
 .marquee-inner {
   display: flex;
   gap: 0;
   white-space: nowrap;
-  animation: marquee 18s linear infinite;
+  animation: marquee 10s linear infinite;
+  align-items: center;
 }
 .marquee-item {
   font-family: var(--font-display);
@@ -255,14 +258,22 @@ nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--black);
-  padding: 0 2rem;
-  display: flex;
   align-items: center;
+  justify-items: center;
+  justify-self: center;
+  text-align: center;
+  display: flex;
   gap: 1.5rem;
+  cursor: default;
+  height: 40px;
+  padding-left: 2em;
 }
+
 .marquee-item::after {
-  content: '✦';
-  font-size: 0.6rem;
+  content: '•';
+}
+.marquee-inner:hover {
+  animation-play-state: paused !important;
 }
 
 /* SERVICES */
@@ -763,7 +774,7 @@ footer {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.333333%);
   }
 }
 @keyframes scrollPulse {

@@ -29,9 +29,23 @@ function checkReveals() {
 
 const videos = document.querySelectorAll('.hoverVideo');
 
+// Detect touch device
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 videos.forEach((video) => {
+  // Desktop: hover behavior
   video.addEventListener('mouseenter', () => {
-    video.play().catch(() => {});
+    if (!isTouchDevice) {
+      video.play().catch(() => {});
+    }
+  });
+
+  video.addEventListener('click', () => {
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
   });
 
   video.addEventListener('mouseleave', () => {
