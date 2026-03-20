@@ -27,6 +27,19 @@ function checkReveals() {
   });
 }
 
+const videos = document.querySelectorAll('.hoverVideo');
+
+videos.forEach((video) => {
+  video.addEventListener('mouseenter', () => {
+    video.play().catch(() => {});
+  });
+
+  video.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+
 window.addEventListener('scroll', checkReveals);
 window.add;
 window.addEventListener('load', checkReveals);

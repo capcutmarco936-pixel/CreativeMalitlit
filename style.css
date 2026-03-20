@@ -64,7 +64,6 @@ nav {
 .nav-logo img {
   height: 38px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .nav-links {
@@ -477,6 +476,8 @@ nav {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  justify-content: center;
   gap: 1.5rem;
 }
 .portfolio-item {
@@ -506,6 +507,7 @@ nav {
   flex-direction: column;
   justify-content: flex-end;
   padding: 1.5rem;
+  pointer-events: none;
 }
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
@@ -707,7 +709,6 @@ footer {
 .footer-logo img {
   height: 28px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .footer-copy {
@@ -877,6 +878,11 @@ footer {
   font-weight: 300;
   line-height: 1.6;
   color: rgba(240, 237, 232, 0.5);
+}
+
+.portfolio-item[data-category='video'] {
+  aspect-ratio: 9 / 16;
+  max-height: 800px;
 }
 
 /* VIDEO PORTFOLIO */
