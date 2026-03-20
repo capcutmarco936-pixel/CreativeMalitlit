@@ -104,7 +104,8 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  height: 90vh;
+  max-height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -544,6 +545,13 @@ nav {
   }
 }
 
+@media (max-width: 500px) {
+  .framework-item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* PROCESS */
 .process-list {
   counter-reset: process;
@@ -706,7 +714,7 @@ nav {
 
 /* FOOTER */
 footer {
-  padding: 3rem;
+  padding: 1rem;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -718,7 +726,7 @@ footer {
   align-items: center;
 }
 .footer-logo img {
-  height: 28px;
+  height: 64px;
   width: auto;
 }
 
