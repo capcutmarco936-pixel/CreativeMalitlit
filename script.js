@@ -1,61 +1,13 @@
-// Portfolio filter
-function filterPortfolio(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+function switchTab(cat, btn) {
+  document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.portfolio-item').forEach((item) => {
-    if (item.dataset.category === cat) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
+  document.querySelectorAll('.p-card').forEach((c) => {
+    c.style.display = c.dataset.cat === cat ? 'flex' : 'none';
   });
 }
-// Show static by defaults
-document.addEventListener('DOMContentLoaded', () =>
-  filterPortfolio('static', document.querySelector('.filter-btn.active')),
-);
-
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-
-function checkReveals() {
-  reveals.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 100) {
-      el.classList.add('visible');
-    }
-  });
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
 }
-
-const videos = document.querySelectorAll('.hoverVideo');
-
-// Detect touch device
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-videos.forEach((video) => {
-  // Desktop: hover behavior
-  video.addEventListener('mouseenter', () => {
-    if (!isTouchDevice) {
-      video.play().catch(() => {});
-    }
-  });
-
-  video.addEventListener('click', () => {
-    if (video.paused) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  });
-
-  video.addEventListener('mouseleave', () => {
-    video.pause();
-    video.currentTime = 0;
-  });
-});
-
-window.addEventListener('scroll', checkReveals);
-window.add;
-window.addEventListener('load', checkReveals);
-checkReveals();
-setTimeout(checkReveals, 300);
